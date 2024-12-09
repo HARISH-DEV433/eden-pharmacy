@@ -8,7 +8,7 @@ const loco = "./images/assets/location.svg";
 
 const Footer = () => {
   return (
-    <div className="absolute bottom-0">
+    <div className="absolute bottom-0 w-[430px]">
     <div className="bg-[#17414F] w-full h-[120px] flex flex-col gap-2">
       <div className="flex justify-center gap-2 py-2">
         <div className="flex justify-center">

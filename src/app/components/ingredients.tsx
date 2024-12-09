@@ -1,11 +1,30 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-const banner_1 = "./images/banners/banner_1.svg";
-const banner_2 = "./images/banners/banner_2.svg";
-const banner_3 = "./images/banners/banner_3.svg";
-const banner_4 = "./images/banners/banner_4.svg";
-const banner_5 = "./images/banners/banner_5.svg";
-const banner_6 = "./images/banners/banner_6.svg";
+const bannerImages = [
+  { src: './images/banners/banner_1.svg', alt: 'ban1' },
+  { src: './images/banners/banner_2.svg', alt: 'ban2' },
+  { src: './images/banners/banner_3.svg', alt: 'ban3' },
+  { src: './images/banners/banner_4.svg', alt: 'ban4' },
+  { src: './images/banners/banner_5.svg', alt: 'ban5' },
+  { src: './images/banners/banner_6.svg', alt: 'ban6' },
+];
+
+const BannerItem = ({ src, alt, title, description }: any) => {
+  return (
+    <div className="relative">
+      <Image src={src} width={200} height={200} alt={alt} />
+      <div className="absolute top-2 left-[7px]">
+        <div className="flex flex-col gap-1 justify-center">
+          <a className="text-[#2D3F59] font-bold text-[6px]">{title}</a>
+          <a className="text-[#727272] text-[5px] font-light">{description}</a>
+        </div>
+        <div className="absolute">
+          <a className="underline font-bold text-[5px] text-[#003569]">SEE MORE</a>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Ingredients = () => {
   return (
@@ -22,96 +41,52 @@ const Ingredients = () => {
               high-quality ingredients for high quality products!
             </p>
           </div>
-          <div className="relative">
-            <Image src={banner_1} width={200} height={200} alt="ban1" />
-            <div className="absolute top-2 left-[7px]">
-              <div className="flex flex-col gap-1 justify-center">
-                <a className="text=[#2D3F59] font-bold text-[6px]">Vitamin C</a>
-                <a className="tex-[#727272] text-[5px] font-light">
-                  Vitamin C as ascorbic acid
-                </a>
-              </div>
-              <div className="absolute">
-                <a className="underline font-bold text-[5px] text-[#003569]">
-                  SEE MORE
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="relative">
-            <Image src={banner_2} width={200} height={200} alt="ban2" />
-            <div className="absolute top-2 left-[7px]">
-              <div className="flex flex-col gap-1 justify-center">
-                <a className="text=[#2D3F59] font-bold text-[6px]">
-                  Vitamin B3
-                </a>
-                <a className="tex-[#727272] text-[5px] font-light">
-                  Niacin for healthy gut and skin
-                </a>
-              </div>
-              <div className="absolute">
-                <a className="underline font-bold text-[5px] text-[#003569]">
-                  SEE MORE
-                </a>
-              </div>
-            </div>
-          </div>
+          {bannerImages.slice(0, 2).map((banner, index) => (
+            <BannerItem
+              key={index}
+              src={banner.src}
+              alt={banner.alt}
+              title={
+                index === 0 ? 'Vitamin C' : index === 1 ? 'Vitamin B3' : ''
+              }
+              description={
+                index === 0
+                  ? 'Vitamin C as ascorbic acid'
+                  : index === 1
+                  ? 'Niacin for healthy gut and skin'
+                  : ''
+              }
+            />
+          ))}
         </div>
         <div className="flex justify-center gap-1">
-          <div className="relative">
-            <Image src={banner_3} width={200} height={200} alt="ban1" />
-            <div className="absolute top-2 left-[7px]">
-              <div className="flex flex-col gap-1 justify-center">
-                <a className="text=[#2D3F59] font-bold text-[6px]">Magnesium</a>
-                <a className="tex-[#727272] text-[5px] font-light">
-                  Boost energy and support muscle function
-                </a>
-              </div>
-              <div className="absolute">
-                <a className="underline font-bold text-[5px] text-[#003569]">
-                  SEE MORE
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="relative">
-            <Image src={banner_4} width={200} height={200} alt="ban2" />
-            <div className="absolute top-2 left-[7px]">
-              <div className="flex flex-col gap-1 justify-center">
-                <a className="text=[#2D3F59] font-bold text-[6px]">
-                  Hyaluronic Acid
-                </a>
-                <a className="tex-[#727272] text-[5px] font-light">
-                  For smooth, supple and soft skin!
-                </a>
-              </div>
-              <div className="absolute">
-                <a className="underline font-bold text-[5px] text-[#003569]">
-                  SEE MORE
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="relative">
-            <Image src={banner_5} width={200} height={200} alt="ban2" />
-            <div className="absolute top-2 left-[7px]">
-              <div className="flex flex-col gap-1 justify-center">
-                <a className="text=[#2D3F59] font-bold text-[6px]">
-                  Lactobacillus
-                </a>
-                <a className="tex-[#727272] text-[5px] font-light">
-                  Invigorate your gut microbiome
-                </a>
-              </div>
-              <div className="absolute">
-                <a className="underline font-bold text-[5px] text-[#003569]">
-                  SEE MORE
-                </a>
-              </div>
-            </div>
-          </div>
+          {bannerImages.slice(2, 5).map((banner, index) => (
+            <BannerItem
+              key={index}
+              src={banner.src}
+              alt={banner.alt}
+              title={
+                index === 0
+                  ? 'Magnesium'
+                  : index === 1
+                  ? 'Hyaluronic Acid'
+                  : index === 2
+                  ? 'Lactobacillus'
+                  : ''
+              }
+              description={
+                index === 0
+                  ? 'Boost energy and support muscle function'
+                  : index === 1
+                  ? 'For smooth, supple and soft skin!'
+                  : index === 2
+                  ? 'Invigorate your gut microbiome'
+                  : ''
+              }
+            />
+          ))}
           <div className="">
-            <Image src={banner_6} width={60} height={60} alt="ban2" />
+            <Image src={bannerImages[5].src} width={60} height={60} alt={bannerImages[5].alt} />
           </div>
         </div>
       </div>

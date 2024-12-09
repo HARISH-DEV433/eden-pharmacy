@@ -7,7 +7,7 @@ const img4 = "./images/gallery/img4.svg";
 
 const Gallery = () => {
     return(
-        <div className="absolute w-[350px] h-[100px] left-0">
+        <div className="absolute w-[350px] h-[100px] top-7 left-0">
             <div className="flex flex-col">
             <div className="flex flex-col">
                 <div className="absolute">

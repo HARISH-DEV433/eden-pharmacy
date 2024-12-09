@@ -10,7 +10,7 @@ const medicine = "./images/assets/medicine.svg";
 
 const Vita = () => {
   return (
-    <div className="bg-[#E2F5FB] w-[423px] absolute left-1 right-2 h-[230px]">
+    <div className="bg-[#E2F5FB] w-[423px] w-[388px] absolute left-1 right-2 h-[230px]">
       <div className="text-[#003569] flex justify-center items-center py-1 font-bold text-2xl">
         Essential Vitamins
       </div>

@@ -1,7 +1,8 @@
 import Navbar from "./components/navbar";
 import Vita from "./components/vita";
 import Ingredients from "./components/ingredients";
-// import Footer from "./components/footer";
+import Blog from "./components/blog";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
       <Navbar />
       <Vita />
       <Ingredients />
-      {/* <Footer /> */}
+      <Blog />
+      <Footer />
     </div>
     /*------------Landing page---------------*/
   );

@@ -1,13 +1,14 @@
 import Image from "next/image";
 
-const logo = "./images/logo.svg";
-const icon_1 = "./images/icon_1.svg";
-const icon_2 = "./images/icon_2.svg";
-const icon_3 = "./images/icon_3.svg";
-const loco = "./images/location.svg";
+const logo = "./images/assets/logo.svg";
+const icon_1 = "./images/assets/icon_1.svg";
+const icon_2 = "./images/assets/icon_2.svg";
+const icon_3 = "./images/assets/icon_3.svg";
+const loco = "./images/assets/location.svg";
 
 const Footer = () => {
   return (
+    <div className="absolute bottom-0">
     <div className="bg-[#17414F] w-screen h-[120px] flex flex-col gap-2">
       <div className="flex justify-center gap-2 py-2">
         <div className="flex justify-center">
@@ -74,6 +75,7 @@ const Footer = () => {
             Elbrit Life Sciences Private Limited. C20, BKC, G Block, Mumbai 400051
         </p>
       </div>
+    </div>
     </div>
   );
 };
